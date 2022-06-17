@@ -1,0 +1,84 @@
+.movies {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.movies h2 {
+  font-size: 1.75rem;
+  line-height: 2.125rem;
+  font-weight: 700;
+}
+
+.movie-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.75rem;
+
+  padding-right: 2.75rem;
+  height: 33rem;
+
+  overflow: auto;
+}
+.movie-list::-webkit-scrollbar {
+  width: .2rem;
+}
+.movie-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.4);
+}
+.movie-list::-webkit-scrollbar-thumb {
+  background: var(--primary);
+}
+
+.movie-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+
+  position: relative; /*pq o botão play ficará exataemnte no centro da img*/
+  padding-left: .6rem;
+  padding-bottom: 1rem;
+
+  background-image: linear-gradient(180deg, rgba(14, 23, 47, 0.0001) 11.72%, #0E172F 100%), url('/assets/bob-sponge-bg.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  width: 16.6rem;
+  height: 8.1rem;
+  border-radius: 8px;
+}
+.movie-list li span {
+  font-size: .875rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+
+  margin-bottom: .3rem;
+}
+
+.movie-list li strong {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+
+.movie-list li button {
+  position: absolute;
+  inset: 0; /*zera todos os eixos, quando usar o margin: auto; irá centralizar*/
+
+  margin: auto;
+  background: transparent;
+
+  width: 2.25rem;
+  height: 2.25rem;
+
+  opacity: 0;
+
+  transform: translateY(2.5rem);
+  transition: all 0.4s
+}
+.movie-list li:hover button {
+  opacity: 1;
+  transform: translateY(0);
+}
