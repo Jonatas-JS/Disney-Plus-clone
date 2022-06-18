@@ -11,15 +11,18 @@
 }
 
 .movie-list {
+  height: 65vh;
+
+  overflow: auto;
+}
+#ul-movie-list {
   display: flex;
   flex-direction: column;
   row-gap: 1.75rem;
 
   padding-right: 2.75rem;
-  height: 33rem;
-
-  overflow: auto;
 }
+
 .movie-list::-webkit-scrollbar {
   width: .2rem;
 }
@@ -30,7 +33,7 @@
   background: var(--primary);
 }
 
-.movie-list li {
+#ul-movie-list li {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -40,16 +43,26 @@
   padding-left: .6rem;
   padding-bottom: 1rem;
 
-  background-image: linear-gradient(180deg, rgba(14, 23, 47, 0.0001) 11.72%, #0E172F 100%), url('/assets/bob-sponge-bg.svg');
+  background-image: linear-gradient(180deg, rgba(14, 23, 47, 0.0001) 11.72%, #0E172F 100%), url('/assets/bob-sponge-bg.svg'), ;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 
-  width: 16.6rem;
-  height: 8.1rem;
+  width: 16.56rem;
+  height: 8.3rem;
   border-radius: 8px;
 }
-.movie-list li span {
+#ul-movie-list::before { 
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.25);
+
+}
+#ul-movie-list li span {
   font-size: .875rem;
   line-height: 1.125rem;
   font-weight: 400;
@@ -57,13 +70,13 @@
   margin-bottom: .3rem;
 }
 
-.movie-list li strong {
+#ul-movie-list li strong {
   font-size: 1rem;
   line-height: 1.25rem;
   font-weight: 600;
 }
 
-.movie-list li button {
+#ul-movie-list li button {
   position: absolute;
   inset: 0; /*zera todos os eixos, quando usar o margin: auto; irá centralizar*/
 
@@ -78,7 +91,7 @@
   transform: translateY(2.5rem);
   transition: all 0.4s
 }
-.movie-list li:hover button {
+#ul-movie-list li:hover button {
   opacity: 1;
   transform: translateY(0);
 }

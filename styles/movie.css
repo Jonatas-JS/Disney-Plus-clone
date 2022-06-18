@@ -26,9 +26,24 @@
   font-weight: 700;
 }
 
+.movie-description {
+  overflow-y: auto;
+  max-height: 33vh;
+}
+.movie-description::-webkit-scrollbar {
+  width: .2rem;
+}
+.movie-description::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+.movie-description::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+
 .movie p {
   width: 100%;
-  max-width: 25rem;
+  max-width: 33.75rem;
 
   line-height: 2rem;
 }
