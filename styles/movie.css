@@ -1,4 +1,5 @@
 .movie {
+  z-index: 1; /* o gradient do BG do App estava ficando na frente do movie */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
